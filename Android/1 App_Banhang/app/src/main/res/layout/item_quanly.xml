@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/item_img_quanly"
+                android:src="@drawable/dra_email"
+                android:layout_width="70dp"
+                android:layout_height="70dp"/>
+
+            <LinearLayout
+
+                android:layout_toEndOf="@+id/item_img_quanly"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/item_quanly_tendonhang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ten don hang"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="2.5dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:paddingLeft="20dp"
+                    />
+                <TextView
+                    android:id="@+id/item_quanly_giadonhang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="gia don hang"
+                    android:textSize="20sp"
+                    android:textColor="@color/red"
+                    android:layout_marginTop="2.5dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:paddingLeft="20dp"
+
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

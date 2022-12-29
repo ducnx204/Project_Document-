@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.Vienthong.Lienhe_Activity">
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/Toolbar"
+        app:title="Liên hệ với ShopsPE"
+        android:layout_gravity="top"
+        android:background="#B9F6CA"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <TextView
+        android:id="@+id/txt_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="thong tin chi tiet"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Địa Chỉ"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppinsbold"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Tại Đà nẵng"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/txt_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Tại Thành Phố Đà nẵng"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email hổ trợ"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ducnxpd04647@fpt.edu.vn"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        />
+
+</LinearLayout>

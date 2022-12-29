@@ -1,0 +1,57 @@
+<?php
+include "connect.php";
+$ho = $_POST['ho'];
+$ten = $_POST['ten'];
+$mobile = $_POST['mobile'];
+$email = $_POST['email'];
+$tongtien = $_POST['tongtien'];
+$iduser = $_POST['iduser'];
+$diachi = $_POST['diachi'];
+$soluong = $_POST['soluong'];
+$chitiet = $_POST['chitiet'];
+
+$query = 'INSERT INTO `thanhtoan`(`iduser`,`ho`,`ten`, `diachi`, `mobile`, `email`, `soluong`, `tongtien`) 
+VALUES ( ' . $iduser . ',"' . $ho . '","' . $ten . '","' . $diachi . '","' . $mobile . '","' . $email . '",' . $soluong . ',"' . $tongtien . '")';
+$data = mysqli_query($conn, $query);
+
+if ($data == true) {
+
+    $query = 'SELECT id AS iddonhang FROM `thanhtoan` WHERE `iduser` = ' . $iduser . ' ORDER BY id DESC LIMIT 1';
+    $data = mysqli_query($conn, $query);
+
+    while ($row = mysqli_fetch_assoc($data)) {
+        $iddonhang = ($row);
+    }
+
+    if (!empty($iddonhang)) {
+        // có đơn hàng
+        $chitiet = json_decode($chitiet, true);
+        foreach ($chitiet as $key => $value) {
+            # code...
+            $truyvan = 'INSERT INTO `chitietthanhtoan`(`iddonhang`, `idsp`, `soluong`, `gia`) VALUES
+             (' . $iddonhang["iddonhang"] . ',' . $value["idsp"] . ',' . $value["soluong"] . ',"' . $value["giasp"] . '")';
+
+            $data = mysqli_query($conn, $truyvan);
+        }
+        if ($data == true) {
+            $arr = [
+                'success' => true,
+                'message' => "thanh cong",
+                'iddonhang' => $iddonhang["iddonhang"]
+            ];
+        } else {
+            $arr = [
+                'success' => false,
+                'message' => "khong thanh cong"
+            ];
+        }
+        printf(json_encode($arr));
+    }
+    # code...
+} else {
+    $arr = [
+        'success' => false,
+        'message' => "khong thanh cong",
+    ];
+    printf(json_encode($arr));
+}
